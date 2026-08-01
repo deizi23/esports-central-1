@@ -184,4 +184,12 @@ function formatDate(date: string) {
 
 .view-all:hover{
     color:white;
-}</style>
+}
+
+  @media screen and (max-width:680px){
+    .result-row{
+      display:flex;
+      flex-direction:column;
+    }
+  }
+</style>
