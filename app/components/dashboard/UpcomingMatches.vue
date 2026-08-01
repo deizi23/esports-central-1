@@ -215,4 +215,13 @@ function formatDate(date: string) {
 .view-all:hover{
     color:white;
 }
+  @media screen and (max-width:680px){
+    .card-header{
+   flex-direction:column;
+    }
+    .match-row{
+      display:flex;
+      flex-direction:column;
+    }
+  }
 </style>
