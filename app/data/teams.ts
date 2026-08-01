@@ -109,7 +109,7 @@ export const teams: Team[] = [
     founded: 2016,
     ranking: 0.73,
     isActive: true,
-    cover:"/covers/atralis-cover.webp"
+    cover:"/covers/astralis-cover.webp"
   },
   {
     id: 12,
