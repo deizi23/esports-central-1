@@ -6,7 +6,7 @@ export const matches: Match[] = [
     teamAId: 1,
     teamBId: 2,
     tournamentId: 1,
-    date: '2026-08-20T18:00:00',
+    date: '2026-08-03T18:00:00',
     scoreA: null,
     scoreB: null,
     status: 'Upcoming'
@@ -16,7 +16,7 @@ export const matches: Match[] = [
     teamAId: 3,
     teamBId: 4,
     tournamentId: 1,
-    date: '2026-08-20T20:00:00',
+    date: '2026-08-04T20:00:00',
     scoreA: null,
     scoreB: null,
     status: 'Upcoming'
@@ -26,7 +26,7 @@ export const matches: Match[] = [
     teamAId: 5,
     teamBId: 6,
     tournamentId: 2,
-    date: '2026-08-21T17:30:00',
+    date: '2026-08-11T17:30:00',
     scoreA: null,
     scoreB: null,
     status: 'Upcoming'
@@ -36,7 +36,7 @@ export const matches: Match[] = [
     teamAId: 7,
     teamBId: 8,
     tournamentId: 2,
-    date: '2026-08-21T20:00:00',
+    date: '2026-08-12T20:00:00',
     scoreA: null,
     scoreB: null,
     status: 'Upcoming'
