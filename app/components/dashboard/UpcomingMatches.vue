@@ -1,19 +1,32 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-
 const { matches } = useMatches()
 const { teams } = useTeams()
-
-const upcomingMatches = computed(() =>
-  [...matches.value]
+const upcomingMatches = computed(() => {
+  const now = new Date()
+  const nextWeek = new Date()
+  nextWeek.setDate(now.getDate() + 7)
+  const twoWeeks = new Date()
+  twoWeeks.setDate(now.getDate() + 14)
+  return matches.value
     .filter(match => match.status === 'Upcoming')
+    .filter(match => {
+      const matchDate = new Date(match.date)
+      if (activeFilter.value === 'all')
+        return true
+      if (activeFilter.value === 'week')
+        return matchDate >= now && matchDate <= nextWeek
+      if (activeFilter.value === 'next')
+        return matchDate > nextWeek && matchDate <= twoWeeks
+      return true
+    })
     .sort(
       (a, b) =>
-        new Date(a.date).getTime() - new Date(b.date).getTime()
+        new Date(a.date).getTime() -
+        new Date(b.date).getTime()
     )
-    .slice(0, 4)
-)
-
+})
+const activeFilter = ref('all')
 function getTeamName(teamId: number) {
   return teams.value.find(team => team.id === teamId)?.name ?? 'Unknown Team'
 }
@@ -35,10 +48,21 @@ function formatDate(date: string) {
     <div class="card-header">
       <h2>Upcoming Matches</h2>
       <div class="filters">
-        <button class="active">All</button>
-        <button>This week</button>
-        <button>Next week</button>
-      </div>
+      <button
+        :class="{ active: activeFilter === 'all' }"
+        @click="activeFilter = 'all'"
+      > All </button>
+
+      <button
+        :class="{ active: activeFilter === 'week' }"
+        @click="activeFilter = 'week'"
+      > This week </button>
+
+      <button
+        :class="{ active: activeFilter === 'next' }"
+        @click="activeFilter = 'next'"
+      > Next week</button>
+    </div>
     </div>
     <div
       v-for="match in upcomingMatches"
