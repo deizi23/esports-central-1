@@ -242,6 +242,7 @@ function formatDate(date: string) {
   @media screen and (max-width:680px){
     .card-header{
    flex-direction:column;
+      gap:20px;
     }
     .match-row{
       display:flex;
