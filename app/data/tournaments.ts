@@ -10,7 +10,7 @@ export const tournaments: Tournament[] = [
     prizePool: '$500,000',
     status: 'Live',
     logo:'/tournaments/BLAST.png',
-    cover:'/tournaments/BLAST-cover.jpg'
+    cover:'/tournaments/Blast-cover.jpg'
   },
   {
     id: 2,
