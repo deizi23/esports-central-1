@@ -21,7 +21,7 @@ export const tournaments: Tournament[] = [
     prizePool: '$1,000,000',
     status: 'Finished',
     logo:'/tournaments/IEM.png',
-    cover:'/tournaments/IEM-Cologne-cover.jpg'
+    cover:'/tournaments/iem-Cologne-cover.jpg'
   },
   {
     id: 3,
